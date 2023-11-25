@@ -1,0 +1,9 @@
+ SELECT
+         DAY(tdate) AS day_of_month,
+         COUNT(*) AS incoming_orders
+     FROM
+       ordermaster
+   WHERE
+       MONTH(tdate) = MONTH(CURDATE())
+   GROUP BY
+       day_of_month;
